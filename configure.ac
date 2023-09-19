@@ -1,8 +1,8 @@
 dnl init
 dnl AC_REVISION($Revision: 1.30 $)
 AC_PREREQ([2.60])
-AC_INIT([chan_quectel],[1.1],[https://github.com/bg111/asterisk-chan-quectel/issues],[chan_quectel],[https://github.com/bg111/asterisk-chan-quectel/])
-PACKAGE_REVISION="43gh=47cg"
+AC_INIT([chan_quectel],[1.1],[https://github.com/IchthysMaranatha/asterisk-chan-quectel/issues],[chan_quectel],[https://github.com/IchthysMaranatha/asterisk-chan-quectel/])
+PACKAGE_REVISION="43gh=47cg-2023"
 AC_CANONICAL_TARGET
 AM_INIT_AUTOMAKE
 AC_CONFIG_HEADERS([config.h])
