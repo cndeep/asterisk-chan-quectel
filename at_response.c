@@ -2064,7 +2064,15 @@ int at_response (struct pvt* pvt, const struct iovec iov[2], int iovcnt, at_res_
 			case RES_CVOICE:
 			case RES_CPMS:
 			case RES_CONF: 
-                                      return 0;
+				ast_log (LOG_ERROR, "Received missed call");
+				{
+					request_clcc(pvt);
+					if(!pvt->ring) {
+						return 0;
+					}
+					char str2[20]="VOICE CALL: END: 0";
+					return at_response_cend (pvt, str2);
+				}
 
 			case RES_CMGS:
 				{
