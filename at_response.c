@@ -1185,6 +1185,9 @@ static int at_response_clcc (struct pvt* pvt, char* str)
 						else
 						{
 							ast_log (LOG_ERROR, "[%s] CLCC call idx %d direction mismatch %d/%d\n", PVT_ID(pvt), cpvt->call_idx, dir, cpvt->dir);
+							ast_log (LOG_ERROR, "[%s] The driver and quectel states have diverged. Reset the driver state\n", PVT_ID(pvt));
+							char str2[20]="VOICE CALL: END: 0";
+							return at_response_cend (pvt, str2);
 						}
 					}
 					else if(dir == CALL_DIR_INCOMING && (state == CALL_STATE_INCOMING || state == CALL_STATE_WAITING))
